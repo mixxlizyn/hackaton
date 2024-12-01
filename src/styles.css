@@ -1,0 +1,375 @@
+/* Общий сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+   /* background-color: #282828; Фон контейнера */
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+
+  
+  /* Заголовок */
+  .header {
+    padding: 20px;
+    text-align: left;
+    border-bottom: 1px solid #3a3a3a;
+  }
+  
+  .header h1 {
+    font-size: 24px;
+    color: #BABABA;
+  }
+  
+
+
+  /* Основной контент */
+  .main-content {
+    flex: 1; /* Занимает всё оставшееся пространство */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Состояние "пусто" */
+  .empty-state .icon {
+    font-size: 48px; /* Размер иконки */
+    margin-bottom: 20px;
+    color: #aaa;
+  }
+  
+  .empty-state .message {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .empty-state .sub-message {
+    font-size: 14px;
+    color: #ccc;
+  }
+  
+  .empty-state .highlight {
+    color: #f97316; /* Оранжевый цвет */
+    font-weight: bold;
+  }
+  
+  /* Кнопка */
+  .add-rule-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #f97316; /* Оранжевый */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .add-rule-btn:hover {
+    background-color: #d45e0c; /* Темнее при наведении */
+  }
+  /* Основной контент */
+/* styles.css */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.header {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-state .icon img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.empty-state .message {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.empty-state .sub-message {
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 10px;
+  color: #c4c4c4;
+  text-align: center;
+}
+
+.empty-state .sub-message span {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.add-rule-btn {
+  align-self: flex-end;
+  background-color: #ff5630;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-rule-btn:hover {
+  background-color: #e04b27;
+}
+
+.add-rule-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 86, 48, 0.4);
+}
+
+  /* Кнопка "Добавить правило" */
+  .add-rule-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #f97316; /* Оранжевый */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .add-rule-btn:hover {
+    background-color: #d45e0c; /* Темнее при наведении */
+  }
+  
+  /* Кнопка меню (три точки) */
+  .menu-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .menu-btn:hover {
+    color: #f97316; /* Подсветка оранжевым при наведении */
+  }
+  /* модальное окно */
+  /* Основной фон для модального окна */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Чтобы окно отображалось выше всего */
+}
+
+/* Контейнер модального окна */
+.modal {
+  background: #2c2c2c;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+
+/* Заголовок модального окна */
+.modal h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Поля ввода */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background: #1e1e1e;
+  color: #ffffff;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+}
+
+/* Кнопки действий */
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancel-btn {
+  background: #4c4c4c;
+  color: #ff5630;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.create-btn {
+  background: #ff5630;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background: #333333;
+}
+
+.create-btn:hover {
+  background: #e04b27;
+}
+/* апро */
+/* .container {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+} */
+
+.header h1 {
+  font-size: 24px;
+  color: #fff;
+}
+
+.main-content {
+  /* background: #222; */
+  color: #ddd;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.empty-state {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.add-rule-btn {
+  background: #ff6600;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  padding: 20px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.modal input,
+.modal textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background: #444;
+  color: #fff;
+}
+
+.modal button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal button[type="submit"] {
+  background: #28a745;
+  color: #fff;
+}
+
+.modal button:last-child {
+  background: #dc3545;
+  color: #fff;
+}
